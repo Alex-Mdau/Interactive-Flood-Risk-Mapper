@@ -1,0 +1,119 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+/* Map Container */
+#map {
+    flex-grow: 1; /* Map takes up the remaining space */
+    height: 100vh;
+    z-index: 0;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 350px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 1; /* Sidebar above the map */
+    overflow-y: auto; /* Allow scrolling for content */
+}
+
+/* Headings and Description */
+#sidebar h1 {
+    color: #004d99; /* Deep blue */
+    margin-top: 0;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Prediction Form */
+#prediction-form {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#prediction-form h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+    color: #333;
+}
+
+#prediction-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#prediction-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#prediction-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Risk Result Display */
+#risk-result {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #aaa;
+    min-height: 50px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 4px;
+}
+
+/* Legend Styling */
+.legend {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.legend h2 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.legend-item span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
