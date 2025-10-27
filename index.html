@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Flood Risk Mapper</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="sidebar">
+        <h1>Flood Risk Mapper 🌊</h1>
+        <p class="description">Interactive map with AI-predicted flood risk based on coordinates.</p>
+        
+        <div id="prediction-form">
+            <h2>AI Risk Prediction</h2>
+            <input type="number" id="lat-input" placeholder="Latitude (e.g., 34.05)" step="0.0001">
+            <input type="number" id="lon-input" placeholder="Longitude (e.g., -118.25)" step="0.0001">
+            <button onclick="getRiskPrediction()">Get Risk Prediction</button>
+            <div id="risk-result">
+                </div>
+        </div>
+
+        <div class="legend">
+            <h2>Legend</h2>
+            <div class="legend-item"><span style="background-color: #ff0000; border: 1px solid #990000;"></span> Simulated High Risk Zone</div>
+            <div class="legend-item"><span style="background-color: #0000ff; border: 1px solid #000099;"></span> Queried Location</div>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-2P3zU8oO1M0T5v75r9g1s6p110g4uF9qX4p4s5P8F4w="
+        crossorigin=""></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+</body>
+</html>
